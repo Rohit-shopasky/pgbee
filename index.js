@@ -6,26 +6,17 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-var connection=require("./db.js");
+//var connection=require("./db.js");
 var mongo=require("mongodb");
 
 app.post("/",function(req,res){
 //res.writeHead(200, {'Content-Type': 'text/plain'});
 res.send("hii");
 console.log("connected !!!!!!!!!!!!!!!!!");
-connection(function(error,db){
-	
-	if(!error)
-	{
-		console.log("db connected");
-	}
-	else{
-		console.log(error);
-	}
-	
-});
 
 });
+
+
 
 app.post("/json",function(req,res){
 
